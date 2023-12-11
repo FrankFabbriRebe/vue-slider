@@ -1,6 +1,7 @@
 const { createApp } = Vue;
 
 createApp({
+
     data() {
 		return {
 
@@ -34,5 +35,24 @@ createApp({
                 }
             ], 
 		}
-    }
+    }, 
+
+    methods: {
+
+		nextImg() {
+            this.activeImagine ++;
+            if(this.activeImagine = this.slides.length - 1) {
+                 this.activeImagine = 0;
+            };
+        },
+
+        prevImg() {
+            this.activeImagine --;
+            if(this.activeImagine < 0) {
+                this.activeImagine = this.slides.length - 1;
+            }
+        }
+
+	}
+
 }).mount('#app')
